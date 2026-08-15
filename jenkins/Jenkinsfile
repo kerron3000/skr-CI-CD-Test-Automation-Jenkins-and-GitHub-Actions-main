@@ -3,13 +3,6 @@ pipeline {
 
     stages {
         stage('unit-test-backend') {
-            agent {
-                docker {
-                    image 'golang:tip-trixie'
-                   // alwaysPull true 
-                    reuseNode true
-                }
-            }
             steps {
                 dir('bugtracker-backend') {
                     sh 'go test -v ./...'
