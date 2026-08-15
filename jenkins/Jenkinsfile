@@ -6,7 +6,7 @@ pipeline {
             agent {
                 docker {
                     image 'golang:tip-trixie'
-                    alwaysPull true // Forces Jenkins to pull the latest image from Docker Hub
+                   // alwaysPull true 
                     reuseNode true
                 }
             }
