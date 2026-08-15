@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('unit-test-frontend') {
+            agent {
+                docker {
+                    /
+                    image 'snakee/golang-junit:1.21'
+                    reuseNode true
+                }
+            }
+
+            steps {
+                dir('bugtracker-frontend') {
+                    sh '''
+
+                        npm ci
+                        npm test
+
+
+                    '''
+                }
+            }
+        }
+    }
+}
