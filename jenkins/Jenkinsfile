@@ -5,7 +5,7 @@ pipeline {
         stage('unit-test-backend') {
             steps {
                 dir('bugtracker-backend') {
-                    sh 'go test -v ./...'
+                    sh 'export PATH=$PATH:/usr/local/go/bin && go test -v ./...'
                 }
             }
         }
